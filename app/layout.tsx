@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import Navbar from "../components/Navbar";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -15,7 +16,8 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "Events Listing Application",
-  description: "n this application, you will be able to create a user, add an event, and search for a specific event",
+  description:
+    "n this application, you will be able to create a user, add an event, and search for a specific event",
 };
 
 export default function RootLayout({
@@ -28,6 +30,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Navbar />
         {children}
       </body>
     </html>
