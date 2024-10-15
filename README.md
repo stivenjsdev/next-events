@@ -6,8 +6,11 @@ Clicking on one of the events will show you the full details of the event. You c
 
 ## List of Tools
 
--  NextAuth.js
--  React Hot Toast
+- Deisy UI
+- Server Actions
+- NextAuth.js
+- React Hot Toast
+
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
