@@ -1,3 +1,14 @@
+# Events Listing Application
+
+In this application, you will be able to create a user, add an event, and search for a specific event. Before you can create an event, you need to register for an account using email and password.
+
+Clicking on one of the events will show you the full details of the event. You can edit or delete the event.
+
+## List of Tools
+
+-  NextAuth.js
+-  React Hot Toast
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
