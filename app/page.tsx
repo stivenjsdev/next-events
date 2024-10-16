@@ -9,7 +9,6 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   const users = await getUser();
-  console.log(users);
 
   return (
     <div className="m-2">
