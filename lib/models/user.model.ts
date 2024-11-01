@@ -1,15 +1,16 @@
-import { Document, Model, Schema, model, models } from "mongoose";
+import { Document, Model, model, models, Schema, Types } from "mongoose";
 
-export type UserType = {
+export type UserType = Document & {
+  _id: Types.ObjectId;
   email: string;
   name: string;
   password: string;
   imageUrl?: string;
+  // createdAt: Date;
+  // updatedAt: Date;
 };
 
-export type UserDocumentType = Document & UserType;
-
-const UserSchema = new Schema<UserDocumentType>(
+const UserSchema = new Schema<UserType>(
   {
     email: {
       type: String,
@@ -33,5 +34,5 @@ const UserSchema = new Schema<UserDocumentType>(
   }
 );
 
-export const User: Model<UserDocumentType> =
-  models.User || model<UserDocumentType>("User", UserSchema);
+export const User: Model<UserType> =
+  models.User || model<UserType>("User", UserSchema);
