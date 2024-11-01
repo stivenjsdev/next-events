@@ -1,3 +1,3 @@
 export default function Profile() {
-  return <h1>The Events Page</h1>;
+  return <h1>The Profile Page</h1>;
 }
