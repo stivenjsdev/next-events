@@ -1,10 +1,13 @@
 "use client";
 
 import { createUser } from "@/lib/actions/user.action";
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
 import { FormEvent, useState } from "react";
 import toast from "react-hot-toast";
 
 export default function SignUpForm() {
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
@@ -15,7 +18,16 @@ export default function SignUpForm() {
       const user = await createUser({ email, name, password });
 
       if (user) {
-        toast.success("Sign Up Successful");
+        const res = await signIn("credentials", {
+          email,
+          password,
+          redirect: false,
+        });
+
+        if (res?.status === 200) {
+          toast.success("Sign Up Successful");
+          router.push("/profile");
+        }
       }
     } catch (error) {
       console.log(error);
